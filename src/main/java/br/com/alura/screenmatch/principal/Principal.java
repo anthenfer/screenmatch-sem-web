@@ -24,7 +24,6 @@ public class Principal {
 
     private SerieRepository repositorio;
     private List<Serie> series = new ArrayList<>();
-    private List<Episodio> episodios = new ArrayList<>();
     private Optional<Serie> serieBusca;
 
     public Principal(SerieRepository repositorio) {
@@ -230,7 +229,7 @@ public class Principal {
             System.out.println("Digite o ano limite de lançamento: ");
             var anoLancamento = leitura.nextInt();
             leitura.nextLine();
-            List<Episodio> episodiosAno = repositorio.episodioPorSerieEAno(serie, anoLancamento);
+            List<Episodio> episodiosAno = repositorio.episodiosPorSerieEAno(serie, anoLancamento);
             episodiosAno.forEach(System.out::println);
         }
     }
